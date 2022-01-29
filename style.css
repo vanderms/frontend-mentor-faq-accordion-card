@@ -1,0 +1,203 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+:root {
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+.attribution {
+  font-size: 12px;
+  text-align: center;
+  height: 40px;
+  color: white;
+  background-color: rgb(15, 15, 15);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.attribution a {
+  color: hsl(229, 33%, 83%);
+}
+
+ul, summary{
+  list-style-type: none;
+}
+
+main {
+  width: 100%;
+  height: 768px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #ac68e9 0%, #6663e8 100%);
+}
+
+.faq {
+  width: 924px;
+  height: 512px;
+  background-color: white;
+  border-radius: 26px;
+  display: flex;
+}
+
+.faq__pictures, .faq__content{
+  width: 50%;
+  height: 100%;
+}
+
+.faq__pictures{
+  position: relative;
+}
+
+.faq__woman-picture{
+  background-image: url(./images/illustration-woman-online-desktop.svg);
+  background-position: right center;
+  position: relative;
+  z-index: 1;
+  width: 390px;
+  height: 358px;
+  margin-top: 72px;   
+}
+
+.faq__box-picture{
+  background-image: url(./images/illustration-box-desktop.svg);
+  position: absolute;
+  width: 191px;
+  height: 184px;
+  top: 208px;
+  z-index: 2;
+  left: -94px;
+}
+
+.faq__bg-pattern{
+  background-image: url(./images/bg-pattern-desktop.svg);
+  background-position: right 640px;
+  position: absolute;
+  z-index: 0;
+  width: 386px;
+  height: 512px;
+  top: 0px;
+  left: 0px;
+}
+
+.faq__content{
+  padding: 68px 0px 0px 16px;
+}
+
+.faq__title{
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--very-dark-desaturated-blue);
+}
+
+.faq__content-list{
+  margin-top: 24px;
+  width: 348px;
+  max-height: 348px;
+  overflow-y: auto;
+}
+
+.faq__content-list details summary{
+  font-size: 14px;
+  color: var(--very-dark-grayish-blue);
+  position: relative;
+  cursor: pointer;
+}
+
+.faq__content-list details summary:hover{
+  color: var(--soft-red);
+
+}
+
+.faq__content-list details summary::before{
+  content: '';
+  background-image: url(./images/icon-arrow-down.svg);
+  width: 10px;
+  height: 7px;
+  position: absolute;
+  right: 0;
+  top: 3.5px;
+  transition: transform 0.2s;
+}
+
+.faq__content-list details[open] summary{
+  font-weight: 700;
+}
+
+.faq__content-list details[open] summary::before{
+  transform: rotate(180deg);
+}
+
+.faq__content-list p{
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--dark-grayish-blue);
+  margin-top: 8px;
+}
+
+.faq__content-list li{
+  padding-bottom: 20px;
+  padding-top: 16px;
+  border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+@media screen and (max-width: 1000px){
+  .faq{
+    width: 325px;
+    height: 532px;
+    flex-direction: column;
+  }
+
+  .faq__pictures, .faq__content{
+    width: 100%;
+    height: auto;
+  }
+
+  .faq__pictures{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .faq__woman-picture{
+    background-image: url(./images/illustration-woman-online-mobile.svg);
+    background-repeat: no-repeat;
+    width: 236px;
+    height: 180px;
+    margin-top: -106px;
+  }
+
+  .faq__box-picture{
+    display: none;        
+  }
+
+  .faq__bg-pattern{
+    background-image: url(./images/bg-pattern-mobile.svg);
+    background-position: center center;
+    width: 240px;
+    height: 104px;
+    top: 0px;
+    left: unset;
+  }
+
+  .faq__title{
+    text-align: center;
+  }
+
+  .faq__content{
+    padding: 30px 16px 0px 16px;
+  }
+  .faq__content-list{
+    width: 100%;
+  }
+}
